@@ -17,7 +17,7 @@
 
 ## App Apk:
 <div align="center">
-<a href="#"><img src="https://github.com/user-attachments/assets/351afcb2-961e-4e05-9c95-a7df7c8be071" width="250"></a>
+<a href="https://github.com/amrk000/Daily-Deal-Android-App/releases/download/demo/Daily.Deal.App.apk"><img src="https://github.com/user-attachments/assets/351afcb2-961e-4e05-9c95-a7df7c8be071" width="250"></a>
 </div>
 
 ## Database ERD:
