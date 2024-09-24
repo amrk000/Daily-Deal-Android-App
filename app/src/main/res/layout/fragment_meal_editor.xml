@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.MealEditor">
+
+    <TextView
+        android:id="@+id/meal_editor_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:includeFontPadding="false"
+        android:text="Create Meal"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meal_editor_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/meal_editor_imageCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="?attr/background"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="1.5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/meal_editor_mealImage"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/logo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/meal_editor_editMealImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_add_24"
+                    app:backgroundTint="?attr/colorPrimary"
+                    app:fabCustomSize="42dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/meal_editor_imageCard"
+                    app:tint="@color/white" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/meal_editor_mealNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/name"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/meal_editor_mealNameField"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/grey"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/write_meal_name"
+                    android:includeFontPadding="false"
+                    android:padding="15dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/meal_editor_mealDescLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/description"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/meal_editor_mealDescField"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/grey"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/meal_description"
+                    android:includeFontPadding="false"
+                    android:padding="15dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/meal_editor_mealRestaurantLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/restaurant"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/meal_editor_mealRestaurantField"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/grey"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/meal_restaurant"
+                    android:includeFontPadding="false"
+                    android:padding="15dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/meal_editor_mealDayLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/available_on"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:id="@+id/meal_editor_mealDayFilterScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_filterImage"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_secondLabel">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isScrollContainer="false"
+                    app:chipSpacingHorizontal="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/meal_editor_mealDay_SATURDAY"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="true"
+                        android:text="@string/saturday"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconTint="#FFFFFF"
+                        app:chipBackgroundColor="#25000000"
+                        app:chipCornerRadius="8dp"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        app:chipStrokeColor="#80FFFFFF"
+                        app:chipStrokeWidth="0.5dp"
+                        app:chipSurfaceColor="?attr/colorPrimary"
+                        app:rippleColor="?attr/colorOnPrimary" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/meal_editor_mealDay_SUNDAY"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="false"
+                        android:text="@string/sunday"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconTint="#FFFFFF"
+
+                        app:chipCornerRadius="8dp"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        app:chipStrokeColor="#80FFFFFF"
+                        app:chipStrokeWidth="0.5dp"
+                        app:chipSurfaceColor="?attr/colorPrimary"
+                        app:rippleColor="?attr/colorOnPrimary" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/meal_editor_mealDay_MONDAY"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="false"
+                        android:text="@string/monday"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconTint="#FFFFFF"
+
+                        app:chipCornerRadius="8dp"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        app:chipStrokeColor="#80FFFFFF"
+                        app:chipStrokeWidth="0.5dp"
+                        app:chipSurfaceColor="?attr/colorPrimary"
+                        app:rippleColor="?attr/colorOnPrimary" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/meal_editor_mealDay_TUESDAY"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="false"
+                        android:text="@string/tuesday"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconTint="#FFFFFF"
+
+                        app:chipCornerRadius="8dp"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        app:chipStrokeColor="#80FFFFFF"
+                        app:chipStrokeWidth="0.5dp"
+                        app:chipSurfaceColor="?attr/colorPrimary"
+                        app:rippleColor="?attr/colorOnPrimary" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/meal_editor_mealDay_WEDNESDAY"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="false"
+                        android:text="@string/wednesday"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconTint="#FFFFFF"
+
+                        app:chipCornerRadius="8dp"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        app:chipStrokeColor="#80FFFFFF"
+                        app:chipStrokeWidth="0.5dp"
+                        app:chipSurfaceColor="?attr/colorPrimary"
+                        app:rippleColor="?attr/colorOnPrimary" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/meal_editor_mealDay_THURSDAY"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="false"
+                        android:text="@string/thursday"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconTint="#FFFFFF"
+
+                        app:chipCornerRadius="8dp"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        app:chipStrokeColor="#80FFFFFF"
+                        app:chipStrokeWidth="0.5dp"
+                        app:chipSurfaceColor="?attr/colorPrimary"
+                        app:rippleColor="?attr/colorOnPrimary" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/meal_editor_mealDay_FRIDAY"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="false"
+                        android:text="@string/friday"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconTint="#FFFFFF"
+
+                        app:chipCornerRadius="8dp"
+                        app:chipEndPadding="10dp"
+                        app:chipStartPadding="10dp"
+                        app:chipStrokeColor="#80FFFFFF"
+                        app:chipStrokeWidth="0.5dp"
+                        app:chipSurfaceColor="?attr/colorPrimary"
+                        app:rippleColor="?attr/colorOnPrimary" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/meal_editor_mealOriginalPriceLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/original_price"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/meal_editor_mealOriginalPriceField"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/grey"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_original_price"
+                    android:inputType="numberDecimal"
+                    android:includeFontPadding="false"
+                    android:padding="15dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/meal_editor_mealDiscountPriceLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/discount_price"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/meal_editor_mealDiscountPriceField"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/grey"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_discount_price"
+                    android:inputType="numberDecimal"
+                    android:includeFontPadding="false"
+                    android:padding="15dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/meal_editor_SaveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:includeFontPadding="false"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Save"
+                    android:textSize="20sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/make_order_CancelButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/meal_editor_DeleteButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:includeFontPadding="false"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Delete"
+                    android:textSize="20sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/make_order_CancelButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/meal_editor_CancelButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/black"
+                android:includeFontPadding="false"
+                android:padding="15dp"
+                android:text="@string/cancel"
+                android:textSize="20sp"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

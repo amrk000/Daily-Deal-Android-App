@@ -1,0 +1,18 @@
+[
+    {
+        "addItem": true,
+        "adminDashboard": true,
+        "deleteItem": true,
+        "editItem": true,
+        "orderItem": true,
+        "role": "admin"
+    },
+    {
+        "addItem": false,
+        "adminDashboard": false,
+        "deleteItem": false,
+        "editItem": false,
+        "orderItem": true,
+        "role": "user"
+    }
+]

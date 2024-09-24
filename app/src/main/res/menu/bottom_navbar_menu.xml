@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/round_home_24"
+        android:title="Home"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/myOrders"
+        android:icon="@drawable/baseline_history_24"
+        android:title="My orders"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/baseline_space_dashboard_24"
+        android:title="Dashboard"
+        android:enabled="true"
+        />
+</menu>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.amrk000.dailydeal.view.fragments.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_makeOrder"
+            app:destination="@id/makeOrder"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"/>
+        <action
+            android:id="@+id/action_home_to_signIn"
+            app:destination="@id/signIn"
+            app:popEnterAnim="@anim/slide_from_right"
+            app:popExitAnim="@anim/slide_to_left"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.amrk000.dailydeal.view.fragments.SignIn"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signIn_to_signUp"
+            app:destination="@id/signUp"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"/>
+        <action
+            android:id="@+id/action_signIn_to_home"
+            app:destination="@id/home"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.amrk000.dailydeal.view.fragments.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_signIn"
+            app:destination="@id/signIn"
+            app:popEnterAnim="@anim/slide_from_right"
+            app:popExitAnim="@anim/slide_to_left"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/myOrders"
+        android:name="com.amrk000.dailydeal.view.fragments.MyOrders"
+        android:label="fragment_my_orders"
+        tools:layout="@layout/fragment_my_orders" />
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.amrk000.dailydeal.view.fragments.Dashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_mealEditor"
+            app:destination="@id/mealEditor"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mealEditor"
+        android:name="com.amrk000.dailydeal.view.fragments.MealEditor"
+        android:label="fragment_meal_editor"
+        tools:layout="@layout/fragment_meal_editor" >
+        <action
+            android:id="@+id/action_mealEditor_to_dashboard"
+            app:destination="@id/dashboard"
+            app:popEnterAnim="@anim/slide_from_right"
+            app:popExitAnim="@anim/slide_to_left"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/makeOrder"
+        android:name="com.amrk000.dailydeal.view.fragments.MakeOrder"
+        android:label="fragment_confirm_order"
+        tools:layout="@layout/fragment_make_order" >
+        <action
+            android:id="@+id/action_makeOrder_to_home"
+            app:destination="@id/home"
+            app:popEnterAnim="@anim/slide_from_right"
+            app:popExitAnim="@anim/slide_to_left"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"/>
+    </fragment>
+</navigation>
