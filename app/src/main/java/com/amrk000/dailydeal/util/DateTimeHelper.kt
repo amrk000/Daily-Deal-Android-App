@@ -5,7 +5,6 @@ import java.util.TimeZone
 
 object DateTimeHelper {
     fun utcToLocal(dateTimeUTC: String): String {
-
         return Instant.parse(dateTimeUTC).atZone(TimeZone.getDefault().toZoneId()).toLocalDateTime().toString()
     }
 

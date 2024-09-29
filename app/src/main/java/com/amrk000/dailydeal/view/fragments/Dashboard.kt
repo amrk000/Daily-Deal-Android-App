@@ -63,7 +63,9 @@ class Dashboard : Fragment() {
         viewModel.getAllItems()
 
         viewModel.getItemsDataObserver().observe(viewLifecycleOwner){ items ->
-            if(items.isNotEmpty()) mealsAdapter.setData(items)
+            mealsAdapter.setData(items)
+
+            if(items.isNotEmpty()) binding.dashboardNoData.visibility = View.INVISIBLE
             else binding.dashboardNoData.visibility = View.VISIBLE
         }
 

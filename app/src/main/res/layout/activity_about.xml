@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context="view.About">
 
+    <ImageButton
+        android:id="@+id/about_closeButton"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/circle_button_ripple"
+        android:scaleType="fitCenter"
+        android:src="@drawable/baseline_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorOnSecondary" />
+
     <ImageView
         android:id="@+id/about_AppIcon"
         android:layout_width="wrap_content"

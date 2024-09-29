@@ -79,8 +79,10 @@ class MakeOrder : Fragment() {
 
         binding.makeOrderCardName.text = itemData?.name
         binding.makeOrderCardRestaurant.text = itemData?.restaurant
+
         binding.makeOrderCardOriginalPrice.text = itemData?.originalPrice.toString() + resources.getString(R.string.currency)
-        binding.makeOrderCardDiscountPrice.text = itemData?.discountPrice.toString() + resources.getString(R.string.currency)
+        if(itemData?.discountPrice!! > 0) binding.makeOrderCardDiscountPrice.text = itemData?.discountPrice.toString() + context?.resources?.getString(R.string.currency)
+        else binding.makeOrderCardDiscountPrice.text = context?.getString(R.string.free)
 
         binding.makeOrderItemDescription.text = itemData?.description
 

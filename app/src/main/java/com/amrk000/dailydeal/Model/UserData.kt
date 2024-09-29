@@ -13,6 +13,7 @@ import androidx.room.PrimaryKey
             entity = Permissions::class,
             parentColumns = arrayOf("role"),
             childColumns = arrayOf("role"),
+            onUpdate = ForeignKey.NO_ACTION,
             onDelete = ForeignKey.NO_ACTION
         )
     ],

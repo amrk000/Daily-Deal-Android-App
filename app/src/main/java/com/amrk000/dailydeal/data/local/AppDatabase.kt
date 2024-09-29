@@ -16,7 +16,7 @@ import com.google.gson.Gson
 import kotlinx.coroutines.coroutineScope
 
 
-@Database(entities = [UserData::class, ItemData::class, Order::class, Permissions::class], version = 2, exportSchema = false)
+@Database(entities = [UserData::class, ItemData::class, Order::class, Permissions::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun dao(): AppDao
 

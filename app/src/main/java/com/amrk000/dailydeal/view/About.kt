@@ -35,6 +35,10 @@ class About : AppCompatActivity() {
 
         binding.aboutAppVersion.setText("Version " + BuildConfig.VERSION_NAME)
 
+        binding.aboutCloseButton.setOnClickListener {
+            onBackPressed()
+        }
+
         binding.moreapps.setOnClickListener { v ->
             val profilelink = Intent(Intent.ACTION_VIEW)
             profilelink.setData(Uri.parse("https://play.google.com/store/apps/dev?id=5289896800613171020"))

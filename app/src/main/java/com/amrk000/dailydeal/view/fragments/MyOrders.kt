@@ -58,7 +58,8 @@ class MyOrders : Fragment() {
         viewModel.getUserOrdersHistory()
 
         viewModel.getUserOrdersHistoryObserver().observe(viewLifecycleOwner){ orders ->
-            if(orders.isNotEmpty()) ordersAdapter.setData(orders)
+            ordersAdapter.setData(orders)
+            if(orders.isNotEmpty()) binding.ordersHistoryNoData.visibility = View.INVISIBLE
             else binding.ordersHistoryNoData.visibility = View.VISIBLE
         }
 

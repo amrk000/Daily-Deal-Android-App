@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
 
         //check if user can access admin dashboard
         if(!viewModel.canAccessAdminDashboard()) binding.bottomNavigation.menu.findItem(R.id.dashboard).isVisible = false
-        
+
     }
 
     fun showAdminDashboard(isAdmin: Boolean){

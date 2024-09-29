@@ -92,7 +92,8 @@ class Home : Fragment() {
         viewModel.getTodayItems()
 
         viewModel.getItemsDataObserver().observe(viewLifecycleOwner){ items ->
-            if(items.isNotEmpty()) mealsAdapter.setData(items)
+            mealsAdapter.setData(items)
+            if(items.isNotEmpty()) binding.homeNoData.visibility = View.INVISIBLE
             else binding.homeNoData.visibility = View.VISIBLE
         }
 
