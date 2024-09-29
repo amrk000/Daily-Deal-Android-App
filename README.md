@@ -26,6 +26,7 @@
 ## Json Configs:
 ### default data are stored in project/raw as json files you can edit them
 ### default_permissions.json (roles and permissions data)
+#### edit to change roles permissions
 ```json
 [
     {
@@ -60,4 +61,28 @@
     "role": "admin"
   }
 ]
+```
+# Random data generator code to populate database
+```kotlin
+        lifecycleScope.launch {
+            for(day in arrayOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")){
+                for(i in 0..10){
+
+                    val images = arrayOf(R.drawable.test_image1, R.drawable.test_image2, R.drawable.test_image3)
+
+                    val base64Image = ImageBase64Converter.encode(ContextCompat.getDrawable(applicationContext, images.random())!!,false)
+
+                    AppDatabase.get(applicationContext).dao().addItem(ItemData(
+                        name= arrayOf("Family Meal", "Ranchit", "Beef Bomb", "Chicken Fajita", "Urban X").random(),
+                        description = "description text test",
+                        restaurant = arrayOf("Big Meal", "EatMore", "Grilled", "Chief Ahmed", "Fast & Food").random(),
+                        image = base64Image,
+                        originalPrice = DecimalFormat("#.#").format(Random.nextDouble(80.0, 150.0)).toDouble(),
+                        discountPrice = DecimalFormat("#.#").format(Random.nextDouble(50.0, 120.0)).toDouble(),
+                        day = day.uppercase()
+                    ))
+
+                }
+            }
+        }
 ```
